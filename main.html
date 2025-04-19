@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sulayman Bowles - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Forum&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/focus-trap@7/dist/focus-trap.min.js" defer></script>
+
+    <style>
+        /* ================================================================== */
+        /* CSS - Minification Recommended for Production */
+        /* ================================================================== */
+
+        /* --- Roman Palace Theme Variables --- */
+        :root {
+            /* Fonts */
+            --font-heading: 'Cinzel', serif;
+            --font-body: 'Forum', serif;
+            /* Colors */
+            --color-text-main: #2C1E1E;
+            --color-text-muted: #5a4e4e;
+            --color-text-light: #F5F0E8; /* NEW: For secondary light text */
+            --color-bg-main: #EAE0D5;
+            --color-bg-card: #ffffff;
+            --color-primary: #800000; /* Maroon */
+            --color-secondary: #A07B24; /* Bronze */
+            --color-accent: #D4AF37; /* Gold */
+            --color-accent-light: #E6C567; /* NEW: Lighter Gold */
+            --color-border: #C0C0C0; /* Silver/Gray */
+            /* Textures */
+            --texture-marble-white: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
+            --texture-stone-light: url('https://www.transparenttextures.com/patterns/worn-dots.png');
+            /*
+             ==================================================================
+             USER ACTION NEEDED: Replace placeholder parallax URL below.
+             Consider using a WebP format for better performance.
+             Example: url('path/to/roman-columns.webp')
+             ==================================================================
+            */
+            --texture-parallax: url('https://images.unsplash.com/photo-1604580863076-561f9f8b0f5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=60'); /* UPDATED: Roman-inspired placeholder */
+            /* Patterns (SVG Data URLs) */
+            --pattern-meander: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cpath d='M0 10 h10 v-10 h10 v20 h10 v-20 h10 v10 h-10 v10 h-10 v-20 h-10 v20 h-10 z M50 10 h10 v-10 h10 v20 h10 v-20 h10 v10 h-10 v10 h-10 v-20 h-10 v20 h-10 z' fill='none' stroke='%23A07B24' stroke-width='2'/%3E%3C/svg%3E");
+            /*
+             ==================================================================
+             USER ACTION NEEDED: Replace placeholder SVG patterns below with actual designs.
+             ==================================================================
+            */
+            --pattern-laurel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='20' viewBox='0 0 50 20'%3E%3Cpath d='M10 15 C 5 15, 0 10, 0 5 C 0 0, 5 0, 10 0 M10 15 C 15 15, 20 10, 20 5 C 20 0, 15 0, 10 0 M25 10 h 10' fill='none' stroke='%23A07B24' stroke-width='1.5'/%3E%3C/svg%3E"); /* Placeholder Laurel */
+            --pattern-coin: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='20' viewBox='0 0 30 20'%3E%3Ccircle cx='15' cy='10' r='7' fill='none' stroke='%23A07B24' stroke-width='1.5'/%3E%3C/svg%3E"); /* Placeholder Coin */
+            --pattern-card-corner: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M0 10 C 5 10, 10 5, 10 0 M 0 10 h 5 M 10 0 v 5' fill='none' stroke='%23A07B24' stroke-width='1' opacity='0.5'/%3E%3C/svg%3E"); /* Placeholder Corner SVG */
+        }
+
+        /* --- Dark Mode Variables --- */
+        body.dark-mode {
+            --color-text-main: #EAE0D5;
+            --color-text-muted: #b0a499;
+            --color-text-light: #9d9186;
+            --color-bg-main: #2C1E1E;
+            --color-bg-card: #3a2e2e;
+            --color-primary: #ff6347; /* Brighter Red/Tomato for contrast */
+            --color-secondary: #D4AF37; /* Gold becomes primary accent */
+            --color-accent: #E6C567; /* Light Gold */
+            --color-accent-light: #f0dca5;
+            --color-border: #5a4e4e;
+            /*
+             ==================================================================
+             USER ACTION NEEDED: Provide dark mode texture URLs if desired.
+             ==================================================================
+            */
+            --texture-marble-white: url('https://www.transparenttextures.com/patterns/dark-paper-fibers.png'); /* Example dark texture */
+            --texture-stone-light: url('https://www.transparenttextures.com/patterns/dark-denim.png'); /* Example dark texture */
+            --texture-parallax: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=60'); /* Example darker parallax */
+            /* Update SVG stroke colors for dark mode if needed */
+            --pattern-meander: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cpath d='M0 10 h10 v-10 h10 v20 h10 v-20 h10 v10 h-10 v10 h-10 v-20 h-10 v20 h-10 z M50 10 h10 v-10 h10 v20 h10 v-20 h10 v10 h-10 v10 h-10 v-20 h-10 v20 h-10 z' fill='none' stroke='%23D4AF37' stroke-width='2'/%3E%3C/svg%3E");
+            --pattern-laurel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='20' viewBox='0 0 50 20'%3E%3Cpath d='M10 15 C 5 15, 0 10, 0 5 C 0 0, 5 0, 10 0 M10 15 C 15 15, 20 10, 20 5 C 20 0, 15 0, 10 0 M25 10 h 10' fill='none' stroke='%23D4AF37' stroke-width='1.5'/%3E%3C/svg%3E");
+            --pattern-coin: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='20' viewBox='0 0 30 20'%3E%3Ccircle cx='15' cy='10' r='7' fill='none' stroke='%23D4AF37' stroke-width='1.5'/%3E%3C/svg%3E");
+            --pattern-card-corner: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M0 10 C 5 10, 10 5, 10 0 M 0 10 h 5 M 10 0 v 5' fill='none' stroke='%23D4AF37' stroke-width='1' opacity='0.5'/%3E%3C/svg%3E");
+        }
+
+        /* --- Base Styles --- */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg-main);
+            /* UPDATED: Background with gradient overlay and texture */
+            background-image: var(--texture-stone-light), linear-gradient(180deg, rgba(234,224,213,0.9) 0%, rgba(234,224,213,0.8) 100%);
+            color: var(--color-text-main);
+            font-size: 19px;
+            line-height: 1.8;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transition for dark mode */
+            @apply flex min-h-screen;
+        }
+        body.modal-open { overflow: hidden; }
+
+        /* Headings & Buttons Font */
+        h1, h2, h3, h4, h5, h6, header nav a, button, .button-primary, .view-project-btn, #dark-mode-toggle, #reset-filter-btn, #back-to-top-btn {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            letter-spacing: 0.07em;
+        }
+
+        /* --- Layout --- */
+        .column-bg {
+             width: 100px;
+             background-color: #DCDCDC;
+             background-image: linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+             background-size: 10px 10px;
+             box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+             flex-shrink: 0;
+             transition: background-color 0.3s ease; /* Dark mode transition */
+        }
+        body.dark-mode .column-bg { background-color: #333; }
+        @media (max-width: 1024px) { .column-bg { display: none; } }
+
+        .main-content-wrapper { @apply w-full flex flex-col min-h-screen; }
+        main.main-content {
+            flex-grow: 1; width: 100%; max-width: 1200px; margin: 0 auto;
+            /* UPDATED: Use variable for background */
+            background-color: rgba(255, 255, 255, 0.8); /* Fallback */
+            background-color: color-mix(in srgb, var(--color-bg-card) 80%, transparent);
+            padding: 0 2rem;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease; /* Dark mode transition */
+            @apply pt-16 pb-8;
+        }
+        body.dark-mode main.main-content {
+             background-color: color-mix(in srgb, var(--color-bg-card) 85%, transparent);
+             box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+        }
+
+        /* --- Transitions --- */
+        a, button, .skill-tag, .interest-tag, .project-item, .card, #dark-mode-toggle, #reset-filter-btn, #back-to-top-btn { transition: all 0.3s ease-in-out; }
+        .card { transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.3s ease-out, box-shadow 0.3s ease-out; } /* Refined card transition */
+        header nav a::after { transition: transform 0.3s ease-out; }
+        .modal-overlay { transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; }
+        .modal-container { transition: transform 0.3s ease-out, opacity 0.3s ease-out, background-color 0.3s ease; }
+
+        /* --- Header --- */
+        header {
+            background-color: color-mix(in srgb, var(--color-bg-card) 97%, transparent);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--color-secondary);
+            transition: background-color 0.3s ease, border-bottom-color 0.3s ease;
+            @apply shadow-lg sticky top-0 z-50 w-full;
+        }
+        header .container { @apply max-w-full px-6 flex justify-between items-center; } /* Ensure items are spaced */
+        header a.site-title { color: var(--color-primary); font-weight: 800; font-size: 2.5rem; @apply tracking-wider; }
+        header nav a {
+            color: var(--color-text-muted); font-weight: 700;
+            border-bottom: 2px solid transparent; position: relative; overflow: hidden;
+            @apply px-4 py-3 text-base hover:text-white hover:bg-gradient-to-r hover:from-red-800 hover:to-red-900 rounded-t-md;
+        }
+        /* Active nav link style */
+        header nav a.active-nav-link {
+            background: var(--color-accent-light);
+            color: var(--color-text-main); /* Ensure contrast */
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        body.dark-mode header nav a.active-nav-link {
+            background: var(--color-accent);
+            color: var(--color-bg-main);
+        }
+        header nav a::after { /* Underline effect */
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px;
+            background-color: var(--color-accent); transform: scaleX(0); transform-origin: left;
+        }
+        header nav a:hover::after { transform: scaleX(1); }
+
+        /* --- Dark Mode Toggle Button --- */
+        #dark-mode-toggle {
+            background: none; border: none; color: var(--color-secondary); font-size: 1.5rem; cursor: pointer;
+            padding: 0.5rem; line-height: 1;
+            @apply hover:text-yellow-500;
+        }
+        body.dark-mode #dark-mode-toggle { color: var(--color-accent); }
+
+        /* --- Hero Section --- */
+        #about { @apply relative overflow-hidden text-center py-16 md:py-24; }
+        .hero-parallax-bg-image {
+             background-image: var(--texture-parallax);
+             /* UPDATED: Opacity and vignette effect */
+             opacity: 0.3;
+             background-image: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.2) 100%), var(--texture-parallax);
+             @apply absolute top-0 left-0 w-full h-full -z-10 bg-cover bg-center;
+        }
+        body.dark-mode .hero-parallax-bg-image { opacity: 0.2; } /* Adjust opacity for dark mode */
+        #hero-photo { @apply w-44 h-44 rounded-full mx-auto mb-6 border-4 border-yellow-700 shadow-lg; }
+        #hero-headline { color: var(--color-primary); @apply text-5xl md:text-6xl font-extrabold mb-4; }
+        #hero-intro { color: var(--color-text-main); @apply text-xl max-w-4xl mx-auto mb-6; }
+        #hero-quote { color: var(--color-text-muted); @apply text-lg max-w-3xl mx-auto mb-8 italic; }
+        #hero-buttons { @apply mt-10 flex flex-col sm:flex-row justify-center items-center space-y-5 sm:space-y-0 sm:space-x-8; }
+        /* Typed.js Cursor Styling */
+        .typed-cursor { opacity: 1; animation: typedjsBlink 0.7s infinite; color: var(--color-primary); }
+        @keyframes typedjsBlink { 50% { opacity: 0.0; } }
+        body.dark-mode .typed-cursor { color: var(--color-accent); }
+
+        /* Decorative Initial Cap */
+        section > p:first-of-type::first-letter {
+            font-size: 2.8em; /* Increased size */
+            color: var(--color-primary);
+            float: left; /* Changed from inline-block */
+            margin-right: 0.15em; /* Adjusted margin */
+            line-height: 0.8; /* Adjust line height */
+            font-weight: 600; /* Slightly bolder */
+            font-family: var(--font-heading); /* Use heading font */
+            padding-top: 0.1em; /* Fine-tune vertical alignment */
+        }
+        body.dark-mode section > p:first-of-type::first-letter { color: var(--color-accent); }
+
+        /* --- Section Titles --- */
+        .section-title {
+            color: var(--color-primary); border-bottom: none; text-align: center; position: relative;
+            padding-bottom: 1.5rem;
+            @apply text-4xl font-extrabold mb-10 flex flex-col items-center gap-2;
+        }
+        @media (min-width: 1024px) {
+            .section-title { @apply text-5xl; } /* UPDATED: Increased font size on desktop */
+        }
+        .section-title i {
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 60%, darken(var(--color-secondary), 10%) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: var(--color-secondary);
+            @apply text-3xl mb-1;
+        }
+        .section-title::after { /* Underline */
+            content: ''; display: block; width: 100px; height: 3px;
+            background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
+            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px;
+        }
+
+        /* --- Cards --- */
+        .card {
+            background-color: var(--color-bg-card); background-image: var(--texture-marble-white);
+            border: 1px solid var(--color-border);
+            /* UPDATED: Added inset shadow */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15), inset 0 0 5px rgba(0,0,0,0.1);
+            border-radius: 5px; color: var(--color-text-main);
+            border-top: 5px solid transparent;
+            border-image: linear-gradient(to right, var(--color-secondary), var(--color-accent)) 1;
+            border-image-slice: 1; border-width: 5px 1px 1px 1px;
+            position: relative; transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Added transitions */
+            @apply p-8 mb-0 flex flex-col;
+        }
+        /* NEW: Card corner decoration */
+        .card::before {
+            content: var(--pattern-card-corner);
+            position: absolute;
+            top: 8px; left: 8px;
+            width: 20px; height: 20px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        .card:hover::before { opacity: 1; }
+        /* UPDATED: Card hover effect */
+        .card:hover {
+            @apply shadow-xl; /* Tailwind shadow */
+            border-color: var(--color-accent); border-top-color: transparent;
+            /* UPDATED: Enhanced border image and transform */
+            border-image: linear-gradient(45deg, var(--color-secondary), var(--color-accent-light)) 1;
+            transform: perspective(1000px) rotateY(2deg) scale(1.03); /* Adjusted rotation */
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2), inset 0 0 8px rgba(0,0,0,0.15); /* Enhanced shadow */
+        }
+        #projects .project-item .card { @apply h-full; }
+        .card-content { @apply flex-grow; }
+        .card h3 { font-family: var(--font-heading); color: var(--color-primary); font-weight: 800; text-align: center; @apply text-2xl mb-3 flex items-center justify-center gap-3; }
+        .card h4 { font-family: var(--font-heading); color: var(--color-secondary); font-weight: 600; /* UPDATED: Weight */ text-align: center; @apply text-xl mb-4; }
+        .card p.date-location { font-family: var(--font-body); color: var(--color-text-muted); text-align: center; @apply text-base mb-4 italic; }
+        .card ul { font-family: var(--font-body); color: var(--color-text-main); list-style-position: outside; margin-left: 1.5em; letter-spacing: 0.05em; /* UPDATED: Letter spacing */ @apply text-lg space-y-3; }
+        .card ul strong { color: var(--color-primary); font-weight: bold; }
+        .card a { color: var(--color-primary); font-weight: bold; }
+        .card a:hover { color: var(--color-secondary); text-decoration: underline; }
+        /* Achievement Badge */
+        .achievement-badge {
+            background: var(--color-accent-light);
+            color: var(--color-text-main); /* Ensure contrast */
+            border-radius: 12px;
+            padding: 0.2em 0.6em; /* Adjusted padding */
+            font-size: 0.75em; /* Adjusted size */
+            font-weight: 600; /* Make it stand out */
+            margin-left: 0.5em;
+            white-space: nowrap;
+            display: inline-block; /* Ensure proper layout */
+            vertical-align: middle; /* Align with text */
+        }
+        body.dark-mode .achievement-badge { background: var(--color-accent); color: var(--color-bg-main); }
+
+        /* --- View Project Button --- */
+        .view-project-btn {
+            display: block; margin: 1.5rem auto 0; background-color: transparent;
+            border: 1px solid var(--color-secondary); color: var(--color-secondary);
+            border-radius: 4px; font-weight: bold; cursor: pointer;
+            @apply text-sm px-5 py-2 hover:bg-yellow-50 hover:text-black;
+        }
+        .view-project-btn i { @apply ml-2; }
+        .view-project-btn:focus-visible {
+             outline: 3px solid var(--color-accent-light); /* UPDATED: Focus style */
+             outline-offset: 2px;
+             background-color: var(--color-bg-card); /* Add background for better visibility */
+        }
+
+
+        /* --- Project Modal Styles --- */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(44, 30, 30, 0.85); backdrop-filter: blur(8px);
+            opacity: 0; visibility: hidden; z-index: 1000;
+            @apply flex items-center justify-center p-4;
+        }
+        body.dark-mode .modal-overlay { background-color: rgba(10, 5, 5, 0.9); }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-container {
+            /* UPDATED: Background color */
+            background-color: #DCD4C9;
+            background-image: var(--texture-stone-light);
+            border: 3px solid var(--color-secondary); border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); width: 100%; max-width: 800px;
+            max-height: 90vh; overflow-y: auto; position: relative;
+            transform: scale(0.9); opacity: 0; color: var(--color-text-main);
+            @apply p-8 md:p-10;
+        }
+        body.dark-mode .modal-container { background-color: #4a3e3e; border-color: var(--color-accent); }
+        .modal-overlay.active .modal-container { transform: scale(1); opacity: 1; }
+        /* UPDATED: Modal close button style */
+        .modal-close-btn {
+            position: absolute; top: 15px; right: 15px;
+            background: var(--color-secondary); color: white;
+            border: none; border-radius: 50%; /* Circle shape */
+            width: 40px; height: 40px; line-height: 40px; /* Center icon */
+            font-size: 1.5rem; /* Adjust icon size */
+            text-align: center; cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            @apply shadow-md hover:scale-110;
+        }
+        body.dark-mode .modal-close-btn { background: var(--color-accent); color: var(--color-bg-main); }
+        .modal-close-btn:hover { background-color: var(--color-primary); }
+        body.dark-mode .modal-close-btn:hover { background-color: var(--color-accent-light); }
+
+        .modal-content h3 {
+            font-family: var(--font-heading); color: var(--color-primary); font-weight: 800;
+            /* UPDATED: Meander pattern border top */
+            border-top: 5px solid transparent; /* Make space for border image */
+            border-image: var(--pattern-meander) 5 round; /* Apply meander pattern */
+            border-bottom: 2px solid var(--color-secondary);
+            padding-top: 0.8rem; /* Add padding above text due to border */
+            @apply text-3xl mb-4 pb-2 text-center;
+        }
+        @media (max-width: 640px) {
+            .modal-content h3 { @apply text-2xl; } /* UPDATED: Mobile font size */
+        }
+        .modal-content h4 { font-family: var(--font-heading); color: var(--color-secondary); font-weight: 700; @apply text-xl mb-4 text-center; }
+        .modal-content h5 { font-family: var(--font-heading); color: var(--color-primary); font-weight: 700; @apply text-lg mt-6 mb-2 border-b border-dotted border-gray-400 pb-1; }
+        .modal-content p, .modal-content ul { font-family: var(--font-body); color: var(--color-text-main); @apply text-base mb-4; }
+        .modal-content ul { list-style-type: disc; @apply ml-6; }
+        .modal-content .project-links a { font-family: var(--font-heading); background-color: var(--color-secondary); color: white; border-radius: 4px; @apply inline-block px-4 py-1 text-sm mr-2 mb-2 hover:bg-yellow-700; }
+        .modal-content .project-links a i { @apply mr-1; }
+        /* Prism.js Code Block Styling */
+        .modal-content pre[class*="language-"] { background-color: #2d2d2d; border: 1px solid var(--color-border); border-radius: 4px; padding: 1em; margin: 1em 0; overflow: auto; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 0.85em; line-height: 1.5; }
+        .modal-content code[class*="language-"] { color: #f8f8f2; }
+
+        /* --- Project Visuals Carousel --- */
+        .project-visuals-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory; /* Snap scrolling */
+            gap: 1rem; /* Space between items */
+            padding-bottom: 1.5rem; /* Space for dots */
+            margin-bottom: 1rem;
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            scrollbar-width: thin; /* Firefox scrollbar */
+            scrollbar-color: var(--color-secondary) var(--color-bg-main); /* Firefox scrollbar colors */
+        }
+        /* Webkit scrollbar styling */
+        .project-visuals-carousel::-webkit-scrollbar { height: 8px; }
+        .project-visuals-carousel::-webkit-scrollbar-track { background: var(--color-bg-main); border-radius: 4px; }
+        .project-visuals-carousel::-webkit-scrollbar-thumb { background-color: var(--color-secondary); border-radius: 4px; border: 2px solid var(--color-bg-main); }
+
+        .project-visuals-carousel figure {
+            flex: 0 0 auto; /* Prevent shrinking/growing */
+            width: 80%; /* Adjust width as needed */
+            max-width: 500px;
+            scroll-snap-align: center; /* Center item on snap */
+            text-align: center;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            overflow: hidden; /* Clip image corners */
+            background-color: var(--color-bg-card); /* Background for figure */
+        }
+        .project-visuals-carousel img,
+        .project-visuals-carousel video {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-bottom: 1px solid var(--color-border); /* Separator */
+        }
+        .project-visuals-carousel figcaption {
+            padding: 0.5rem;
+            font-size: 0.9em;
+            color: var(--color-text-muted);
+            font-family: var(--font-body);
+        }
+        /* Carousel Dots (Placeholder - JS needed for dynamic dots) */
+        .carousel-dots { text-align: center; margin-top: 0.5rem; }
+        .carousel-dots .dot { display: inline-block; width: 12px; height: 12px; background-color: var(--color-border); border-radius: 50%; margin: 0 5px; cursor: pointer; transition: background-color 0.3s ease; }
+        .carousel-dots .dot.active { background-color: var(--color-secondary); }
+        /* Placeholder for Laurel dots - requires SVG/FA */
+        /* .carousel-dots .dot::before { content: '\fXXX'; font-family: 'Font Awesome 6 Free'; ... } */
+
+
+        /* --- Section Dividers --- */
+        .section-divider {
+            height: 30px; background-repeat: repeat-x; background-position: center;
+            margin: 2.5rem 0; opacity: 0.6; transition: background-image 0.3s ease;
+            /* Default pattern */
+            background-image: var(--pattern-meander);
+        }
+        /* Apply specific patterns */
+        #music ~ .section-divider { background-image: var(--pattern-laurel); }
+        #projects ~ .section-divider { background-image: var(--pattern-coin); }
+        /* GSAP will handle the entrance animation */
+
+        /* --- Tags (Skill & Interest) --- */
+        .skill-tag, .interest-tag {
+            font-family: var(--font-body); border: 2px solid var(--color-secondary);
+            background-color: transparent; color: var(--color-secondary);
+            border-radius: 4px; font-weight: bold;
+            /* UPDATED: Make tags clickable */
+            cursor: pointer;
+            @apply text-sm mr-2 mb-2 px-4 py-1 inline-block transform hover:bg-yellow-100 hover:text-black hover:-translate-y-1;
+        }
+        .skill-tag:hover, .interest-tag:hover { color: #111; }
+        .skill-tag.language-tag { border-color: #006400; color: #006400; }
+        .skill-tag.language-tag:hover { background-color: #f0fff0; color: #111; }
+        /* Active tag style */
+        .skill-tag.active-tag, .interest-tag.active-tag {
+            background-color: var(--color-secondary);
+            color: white;
+            border-color: var(--color-secondary);
+        }
+        body.dark-mode .skill-tag.active-tag, body.dark-mode .interest-tag.active-tag {
+            background-color: var(--color-accent);
+            color: var(--color-bg-main);
+            border-color: var(--color-accent);
+        }
+
+        /* --- Filtered State --- */
+        .filtered-out {
+            filter: grayscale(80%);
+            opacity: 0.4;
+            transform: scale(0.98); /* Slight shrink */
+            transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+        }
+        /* Reset Filter Button */
+        #reset-filter-btn {
+            display: none; /* Hidden by default, shown by JS */
+            margin: 1rem auto;
+            font-size: 0.9em;
+            @apply button-primary; /* Reuse primary button style */
+        }
+
+
+        /* --- Buttons & Links --- */
+        a { color: var(--color-primary); }
+        a:hover { color: var(--color-secondary); }
+        .button-primary {
+            font-family: var(--font-heading);
+            background: linear-gradient(to bottom, var(--color-accent), var(--color-secondary));
+            color: var(--color-text-main); border: 1px solid var(--color-secondary);
+            border-radius: 5px; font-weight: 700;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+            @apply inline-block px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+        }
+        .button-primary:hover {
+            background: linear-gradient(to bottom, var(--color-secondary), var(--color-primary));
+            color: white; box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .button-primary i { color: var(--color-primary); @apply mr-2; }
+        .button-primary:hover i { color: white; }
+        .button-primary:focus-visible {
+             outline: 3px solid var(--color-accent-light);
+             outline-offset: 2px;
+        }
+
+        /* Social Links */
+        #about .social-link { color: var(--color-secondary); }
+        #about .social-link:hover { color: var(--color-primary); transform: scale(1.15) rotate(5deg); }
+
+        /* --- Contact Section --- */
+        #contact {
+            background-color: color-mix(in srgb, var(--color-bg-card) 80%, transparent);
+            background-image: var(--texture-marble-white);
+            border: 3px solid var(--color-secondary); border-top: 10px solid var(--color-primary);
+            color: var(--color-text-main); box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 8px; transition: background-color 0.3s ease, border-color 0.3s ease;
+            @apply p-10 md:p-16;
+        }
+        #contact h2 { color: var(--color-primary); @apply text-4xl font-extrabold text-center mb-6 !border-b-0; }
+        #contact p { color: var(--color-text-muted); @apply text-center text-lg mb-10 max-w-xl mx-auto; }
+        #contact a { color: var(--color-primary); font-weight: bold; font-size: 1.1em; @apply flex items-center transform hover:scale-105 hover:text-red-700; }
+        #contact a i { color: var(--color-secondary); @apply mr-3 text-xl; }
+
+        /* Contact Form Styles */
+        #contact-form { @apply max-w-xl mx-auto mt-8; }
+        #contact-form label { display: block; margin-bottom: 0.5rem; color: var(--color-text-muted); font-weight: bold; font-family: var(--font-heading); }
+        #contact-form input[type="text"],
+        #contact-form input[type="email"],
+        #contact-form textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid transparent; /* Make space for border image */
+            border-image: var(--pattern-meander) 2 round; /* Apply meander border */
+            background-color: var(--color-bg-card);
+            color: var(--color-text-main);
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        #contact-form input[type="text"]:focus,
+        #contact-form input[type="email"]:focus,
+        #contact-form textarea:focus {
+            outline: none;
+            border-image: none; /* Remove border image on focus */
+            border: 2px solid var(--color-accent-light); /* Use focus color */
+            box-shadow: 0 0 8px var(--color-accent-light);
+        }
+        body.dark-mode #contact-form input, body.dark-mode #contact-form textarea {
+            background-color: var(--color-bg-main); /* Darker background */
+            color: var(--color-text-main);
+            border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cpath d='M0 10 h10 v-10 h10 v20 h10 v-20 h10 v10 h-10 v10 h-10 v-20 h-10 v20 h-10 z M50 10 h10 v-10 h10 v20 h10 v-20 h10 v10 h-10 v10 h-10 v-20 h-10 v20 h-10 z' fill='none' stroke='%23D4AF37' stroke-width='2'/%3E%3C/svg%3E") 2 round; /* Use dark mode pattern */
+        }
+        #contact-form button[type="submit"] {
+            @apply button-primary mx-auto block; /* Center the button */
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #3a2e2e; color: var(--color-bg-main);
+            border-top: 5px solid var(--color-secondary);
+            transition: background-color 0.3s ease, border-top-color 0.3s ease;
+            @apply text-center py-8 w-full;
+        }
+        body.dark-mode footer { background-color: #1f1a1a; border-top-color: var(--color-accent); }
+        footer p { font-family: var(--font-body); @apply text-base; }
+        footer i.fa-heart { color: var(--color-primary); }
+        body.dark-mode footer i.fa-heart { color: var(--color-accent); }
+
+        /* --- Back to Top Button --- */
+        #back-to-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--color-secondary);
+            color: white;
+            border: none;
+            border-radius: 50%; /* Make it circular */
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            line-height: 50px; /* Center icon vertically */
+            text-align: center;
+            cursor: pointer;
+            opacity: 0; /* Hidden by default */
+            visibility: hidden;
+            transform: translateY(20px); /* Start off-screen */
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+            z-index: 900;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        #back-to-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        #back-to-top-btn:hover {
+            background-color: var(--color-primary);
+            transform: scale(1.1);
+        }
+        body.dark-mode #back-to-top-btn { background-color: var(--color-accent); }
+        body.dark-mode #back-to-top-btn:hover { background-color: var(--color-accent-light); color: var(--color-bg-main); }
+
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+             h2.section-title { @apply text-3xl; }
+             #hero-headline { @apply text-4xl; }
+             main.main-content { padding: 0 1rem; @apply pt-12 pb-6; }
+             #contact { @apply p-6 md:p-8; }
+             /* Stack contact links */
+             #contact .flex-col.md\\:flex-row { @apply flex-col space-y-6 md:space-y-0 md:space-x-0; }
+        }
+        @media (max-width: 640px) {
+            .card { @apply p-6; } /* UPDATED: Reduced card padding */
+            /* Stack hero social links */
+            #about .social-link { @apply mb-4; } /* Add margin between stacked links */
+            #hero-buttons > div.flex { @apply flex-col space-y-4 space-x-0; } /* Stack social icons */
+        }
+
+        /* Reduce default spacing between sections slightly */
+        section { @apply mb-16; }
+
+        /* --- Accessibility --- */
+        *:focus { outline: none; /* Remove default outline */ }
+        *:focus-visible {
+             outline: 3px solid var(--color-accent-light); /* Use custom focus style */
+             outline-offset: 2px;
+             box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent-light) 50%, transparent); /* Optional glow */
+        }
+        /* Ensure high contrast focus for dark mode */
+        body.dark-mode *:focus-visible {
+             outline-color: var(--color-accent);
+             box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 50%, transparent);
+        }
+        /* Skip Link (Optional but recommended) */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-secondary); color: white; padding: 8px; z-index: 1001; transition: top 0.3s ease; }
+        .skip-link:focus { top: 0; }
+
+    </style>
+</head>
+<body class=""> <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="column-bg"></div>
+
+    <div class="main-content-wrapper">
+        <header>
+            <div class="container mx-auto px-6 py-3 flex flex-wrap md:flex-nowrap justify-between items-center">
+                <a href="#" class="site-title mb-2 md:mb-0 text-2xl sm:text-3xl lg:text-4xl">Sulayman Bowles</a>
+                <div class="flex items-center space-x-2 md:space-x-4 w-full md:w-auto justify-center md:justify-end">
+                    <nav id="main-nav" class="flex flex-wrap justify-center space-x-1 md:space-x-2 order-2 md:order-1">
+                        <a href="#about">About</a>
+                        <a href="#experience">Experience</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#leadership">Leadership</a>
+                        <a href="#music">Music</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
+                    <button id="dark-mode-toggle" aria-label="Toggle dark mode" class="order-1 md:order-2 ml-auto md:ml-0">
+                        <i class="fas fa-moon"></i> </button>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content" class="main-content">
+
+            <section id="about" aria-labelledby="hero-headline">
+                 <div id="hero-parallax-bg" class="hero-parallax-bg-image" aria-hidden="true"></div>
+                 <img id="hero-photo" src="https://placehold.co/180x180/EAE0D5/800000?text=SB" alt="Professional headshot for Sulayman Bowles" class="w-44 h-44 rounded-full mx-auto mb-6 border-4 border-yellow-700 shadow-lg" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/180x180/EAE0D5/800000?text=Error';">
+                 <h2 id="hero-headline" class="text-5xl md:text-6xl font-extrabold mb-4" style="color: var(--color-primary);">
+                     Hi, I'm Sulayman Bowles<br>A <span id="typed-text"></span>
+                 </h2>
+                 <p id="about-intro" class="text-xl max-w-4xl mx-auto mb-6" style="color: var(--color-text-main);">
+                    Leveraging the discipline of orchestral performance and analytical rigor to drive innovation in finance and technology. A motivated student at The University of Texas at Austin pursuing a B.A. in Music with deep experience in financial modeling, blockchain technology, and project management.
+                </p>
+                 <p id="hero-quote" class="text-lg max-w-3xl mx-auto mb-8 italic" style="color: var(--color-text-muted);">
+                     "I believe the focus required in music translates directly to the precision needed in analysis and development, while ensemble collaboration mirrors effective teamwork in any venture."
+                 </p>
+                 <div id="hero-buttons" class="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-5 sm:space-y-0 sm:space-x-8">
+                    <a href="YOUR_RESUME_LINK.pdf" download="Sulayman_Bowles_Resume.pdf" class="button-primary">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://linkedin.com/in/sulayman-bowles" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="social-link" aria-label="Visit Sulayman Bowles' LinkedIn profile">
+                            <i class="fab fa-linkedin fa-3x"></i><span class="sr-only">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/SulaymanB2024" target="_blank" rel="noopener noreferrer" title="GitHub" class="social-link" aria-label="Visit Sulayman Bowles' GitHub profile">
+                            <i class="fab fa-github fa-3x"></i><span class="sr-only">GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <section id="education" aria-labelledby="education-title">
+                <h2 id="education-title" class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="card max-w-3xl mx-auto" aria-describedby="education-intro">
+                    <p id="education-intro" class="sr-only">Education details for The University of Texas at Austin.</p>
+                    <h3>The University of Texas at Austin</h3>
+                    <h4>Bachelor of Arts in Music</h4>
+                    <p class="date-location">Expected Graduation: May 2028 | Austin, TX</p>
+                    <p class="text-base" style="color: var(--color-text-muted);">Overall GPA: 3.82</p>
+                </div>
+            </section>
+
+             <div class="section-divider" aria-hidden="true"></div>
+
+            <section id="experience" aria-labelledby="experience-title">
+                <h2 id="experience-title" class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+                 <button id="reset-filter-btn" class="hidden">Show All Experience/Projects</button>
+                 <div class="grid grid-cols-1 gap-8 experience-list"> <div class="card experience-item" data-tags="real-estate financial-modeling data-analysis excel" aria-describedby="exp1-desc">
+                         <h3>Commercial Real Estate Intern</h3>
+                         <h4>Investors Alliance, Inc.</h4>
+                         <p class="date-location">Summer 2025 | Austin, TX</p>
+                         <ul id="exp1-desc">
+                             <li>Building pro forma models and cash-flow forecasts for property evaluations.</li>
+                             <li>Rebuilding internal investment database and redesigning storage schema, for data integrity and reporting efficiency.</li>
+                         </ul>
+                     </div>
+                     <div class="card experience-item" data-tags="blockchain bittensor startup governance python" aria-describedby="exp2-desc">
+                         <h3>Co-Founder</h3>
+                         <h4>VC-Backed Startup (Blockchain Focus)</h4>
+                         <p class="date-location">Jan 2025 - Present | Remote</p>
+                         <ul id="exp2-desc">
+                             <li>Architected a blockchain project on the <a href="https://bittensor.com/" target="_blank" rel="noopener noreferrer" title="Visit Bittensor Website (External Link)">Bittensor</a> protocol, focusing on decentralized data validation mechanisms. (Contact for more details).</li>
+                             <li>Coordinated governance design and technical requirements under DormDAO sponsorship <span class="achievement-badge">$10K Grant</span>.</li>
+                         </ul>
+                     </div>
+                     <div class="card experience-item" data-tags="blockchain defi due-diligence valuation-analysis financial-modeling crypto" aria-describedby="exp3-desc">
+                         <h3>Investment Team Analyst</h3>
+                         <h4>Texas Blockchain</h4>
+                         <p class="date-location">Sep 2024 - Present | Austin, TX</p>
+                         <ul id="exp3-desc">
+                             <li>Perform due diligence on <strong>10+ cryptoasset projects</strong> (primarily DeFi & L1 infrastructure), delivering risk assessments and valuation summaries.</li>
+                             <li>Deliver stock pitches allocating <strong>$5 K-$8 K per idea</strong> into a <strong>$120 K AUM</strong> portfolio.</li>
+                             <li>Develop and refine financial models and valuation analyses for blockchain projects.</li>
+                         </ul>
+                     </div>
+                     <div class="card experience-item" data-tags="energy-trading market-analysis financial-modeling" aria-describedby="exp4-desc">
+                         <h3>Cohort Member</h3>
+                         <h4>UTEXAS Energy Trading</h4>
+                         <p class="date-location">Mar 2025 - Present | Austin, TX</p>
+                         <ul id="exp4-desc">
+                             <li>Conduct market analysis of energy commodities—including electricity, natural gas, and renewables—to identify trading opportunities.</li>
+                             <li>Collaborate to refine models, optimize portfolio performance, and integrate research feedback.</li>
+                         </ul>
+                     </div>
+                     <div class="card experience-item" data-tags="marketing crypto community-management market-analysis" aria-describedby="exp5-desc">
+                         <h3>Marketing Intern</h3>
+                         <h4>Trading App (Stealth; Y Combinator S22)</h4>
+                         <p class="date-location">Jan 2025 - Feb 2025 | Remote</p>
+                         <ul id="exp5-desc">
+                             <li>Managed Twitter and Telegram channels, crafting community content and AMAs.</li>
+                             <li>Conducted market research on memecoin trading trends to guide messaging priorities.</li>
+                         </ul>
+                     </div>
+                      <div class="card experience-item" data-tags="consulting startup strategy project-management" aria-describedby="exp6-desc">
+                         <h3>Consultant</h3>
+                         <h4>TaskFormer</h4>
+                         <p class="date-location">Jan 2025 - Present | Remote</p>
+                         <ul id="exp6-desc">
+                             <li>Collaborate with founders, mentors, and VC scouts to foster accountability and rapid feedback.</li>
+                             <li>Advise on strategic initiatives to empower student entrepreneurs into the startup ecosystem.</li>
+                         </ul>
+                     </div>
+                 </div>
+            </section>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <section id="projects" aria-labelledby="projects-title">
+                <h2 id="projects-title" class="section-title"><i class="fas fa-lightbulb"></i> Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 project-list"> <div class="project-item" data-tags="trading-challenge algorithmic-trading python risk-management">
+                        <div class="card" aria-describedby="proj1-desc">
+                            <div class="card-content">
+                                <h3><i class="fas fa-chart-line"></i> IMC Trading Challenge</h3>
+                                <h4>Participant</h4>
+                                <p class="date-location">Spring 2025 | Virtual</p>
+                                <ul id="proj1-desc">
+                                    <li>Devised algorithmic and discretionary strategies across multi-round market simulations. <span class="achievement-badge">Top 15% Final Round</span></li>
+                                </ul>
+                            </div>
+                            <button class="view-project-btn" data-project-id="imc" aria-controls="project-modal">
+                                View Project <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-item" data-tags="stablecoin blockchain research python data-analysis messari crypto">
+                        <div class="card" aria-describedby="proj2-desc">
+                             <div class="card-content">
+                                <h3><i class="fas fa-coins"></i> Messari Stablecoin Research</h3>
+                                <h4>Analyst</h4>
+                                <p class="date-location">Spring 2025 | Austin, TX</p>
+                                <ul id="proj2-desc">
+                                    <li>Researched stablecoin mechanisms and market trends across multiple assets.</li>
+                                    <li>Automated data-monitoring workflows to improve reporting efficiency.</li>
+                                </ul>
+                             </div>
+                             <button class="view-project-btn" data-project-id="messari" aria-controls="project-modal">
+                                 View Project <i class="fas fa-external-link-alt"></i>
+                             </button>
+                        </div>
+                    </div>
+                    <div class="project-item" data-tags="case-study investment-thesis financial-modeling valuation-analysis excel">
+                        <div class="card" aria-describedby="proj3-desc">
+                             <div class="card-content">
+                                <h3><i class="fas fa-file-alt"></i> Point72 Case Study</h3>
+                                <h4>Team Member</h4>
+                                <p class="date-location">Fall 2024 | UT Austin</p>
+                                <ul id="proj3-desc">
+                                    <li>Analyzed competitive positioning and industry trends for a fast-casual short-selling thesis.</li>
+                                    <li>Modeled market-size and valuation scenarios to support investment recommendations.</li>
+                                </ul>
+                             </div>
+                             <button class="view-project-btn" data-project-id="point72" aria-controls="project-modal">
+                                 View Project <i class="fas fa-external-link-alt"></i>
+                             </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+             <section id="skills" aria-labelledby="skills-title">
+                 <h2 id="skills-title" class="section-title"><i class="fas fa-code"></i> Skills & <i class="fas fa-certificate"></i> Certifications</h2>
+                 <p class="text-lg text-center max-w-3xl mx-auto mb-10" style="color: var(--color-text-muted);">My technical and analytical skills bridge music’s precision with finance’s rigor, honed through hands-on projects and certifications.</p>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                         <h3 class="text-2xl font-semibold mb-4 text-center" style="color: var(--color-primary);"><i class="fas fa-calculator" style="color: var(--color-secondary);"></i> Financial & Analytical</h3>
+                         <div class="text-center mb-6 skills-list">
+                             <span class="skill-tag" data-tag="financial-modeling">Financial Modeling</span>
+                             <span class="skill-tag" data-tag="valuation-analysis">Valuation Analysis</span>
+                             <span class="skill-tag" data-tag="market-analysis">Market Analysis</span>
+                             <span class="skill-tag" data-tag="due-diligence">Due Diligence</span>
+                             <span class="skill-tag" data-tag="data-analysis">Data Analysis</span>
+                             <span class="skill-tag" data-tag="excel">Excel (Adv.)</span>
+                         </div>
+                         <h3 class="text-2xl font-semibold mb-4 text-center" style="color: var(--color-primary);"><i class="fas fa-laptop-code" style="color: var(--color-secondary);"></i> Technical</h3>
+                         <div class="text-center mb-6 skills-list">
+                             <span class="skill-tag" data-tag="python">Python</span>
+                             <span class="skill-tag" data-tag="sql">SQL (Basic)</span>
+                             <span class="skill-tag" data-tag="git">Git & GitHub</span>
+                             <span class="skill-tag" data-tag="blockchain">Blockchain Concepts</span>
+                             <span class="skill-tag" data-tag="tableau">Tableau</span>
+                         </div>
+                         <h3 class="text-2xl font-semibold mb-4 text-center" style="color: var(--color-primary);"><i class="fas fa-tools" style="color: var(--color-secondary);"></i> Software & Other</h3>
+                         <div class="text-center mb-6 skills-list">
+                             <span class="skill-tag" data-tag="office-suite">Microsoft Office Suite</span>
+                             <span class="skill-tag" data-tag="powerpoint">PowerPoint</span>
+                             <span class="skill-tag" data-tag="word">Word</span>
+                             <span class="skill-tag" data-tag="google-workspace">Google Workspace</span>
+                             <span class="skill-tag" data-tag="canva">Canva</span>
+                             <span class="skill-tag" data-tag="project-management">Project Management</span>
+                         </div>
+                         <h3 class="text-2xl font-semibold mb-4 text-center" style="color: var(--color-primary);"><i class="fas fa-language" style="color: var(--color-secondary);"></i> Languages</h3>
+                         <div class="text-center skills-list">
+                             <span class="skill-tag language-tag" data-tag="spanish">Spanish (Intermediate)</span>
+                         </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-center" style="color: var(--color-primary);"><i class="fas fa-award" style="color: var(--color-secondary);"></i> Certifications (2024)</h3>
+                         <ul class="list-none space-y-3 text-center text-lg certifications-list">
+                             <li><i class="fas fa-check-circle mr-2" style="color: var(--color-secondary);"></i>Google Data Analytics <span class="skill-tag cert-tag" data-tag="data-analysis"></span></li>
+                             <li><i class="fas fa-check-circle mr-2" style="color: var(--color-secondary);"></i>Google Project Management <span class="skill-tag cert-tag" data-tag="project-management"></span></li>
+                             <li><i class="fas fa-check-circle mr-2" style="color: var(--color-secondary);"></i>IBM Program Manager <span class="skill-tag cert-tag" data-tag="project-management"></span></li>
+                             <li><i class="fas fa-check-circle mr-2" style="color: var(--color-secondary);"></i>Bloomberg Market Concepts <span class="skill-tag cert-tag" data-tag="market-analysis"></span></li>
+                             <li><i class="fas fa-check-circle mr-2" style="color: var(--color-secondary);"></i>Bloomberg Finance Fund. <span class="skill-tag cert-tag" data-tag="financial-modeling"></span></li>
+                             <li><i class="fas fa-check-circle mr-2" style="color: var(--color-secondary);"></i>Yale Financial Markets (Honors) <span class="skill-tag cert-tag" data-tag="market-analysis"></span></li>
+                             <li><i class="fas fa-check-circle mr-2" style="color: var(--color-secondary);"></i>IBM Python for Data Science <span class="skill-tag cert-tag" data-tag="python"></span></li>
+                         </ul>
+                         <style>.cert-tag { display: none; }</style>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+             <section id="leadership" aria-labelledby="leadership-title">
+                 <h2 id="leadership-title" class="section-title"><i class="fas fa-users"></i> Leadership & Activities</h2>
+                 <p class="text-lg text-center max-w-3xl mx-auto mb-10" style="color: var(--color-text-muted);">Leadership is about fostering collaboration and driving impact, whether in student government or community initiatives.</p>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                     <div class="card leadership-item" data-tags="student-government leadership policy advocacy" aria-describedby="lead1-desc">
+                        <h3>University of Texas Student Government</h3>
+                        <h4>University-Wide Representative</h4>
+                        <p class="date-location">Mar 2025 - Present | Austin, TX</p>
+                        <ul id="lead1-desc">
+                            <li>Represent the interests of <strong>52 K UT Austin students</strong> in Assembly deliberations, elected by a 4 K-student turnout.</li>
+                            <li>Serve on the Government Relations Committee, liaising between student leaders and administration.</li>
+                            <li>Draft and negotiate policy resolutions governing <strong>$5 M+ in student-fee allocations</strong>; successfully advocated for increased study space funding.</li>
+                            <li>Spearhead an alumni engagement initiative to connect current students with UT Austin graduates (ongoing).</li>
+                        </ul>
+                    </div>
+                     <div class="card leadership-item" data-tags="leadership mentorship service" aria-describedby="lead2-desc">
+                         <h3>First Year Leadership Organization</h3>
+                         <h4>Student Leader</h4>
+                         <p class="date-location">Sep 2024 - Present | Austin, TX</p>
+                         <ul id="lead2-desc"><li>Spearheaded a semester-long service project for incoming students, culminating in successful park cleanup event.</li></ul>
+                     </div>
+                     <div class="card leadership-item" data-tags="leadership arts-administration event-management" aria-describedby="lead3-desc">
+                         <h3>Fine Arts Student Council</h3>
+                         <h4>Board Member</h4>
+                         <p class="date-location">Sep 2024 - Present | Austin, TX</p>
+                         <ul id="lead3-desc"><li>Orchestrate exhibitions and performances, managing sponsorships and logistics.</li></ul>
+                     </div>
+                     <div class="card leadership-item" data-tags="finance blockchain mis supply-chain nuclear" aria-describedby="lead4-desc">
+                         <h3>Additional Memberships</h3>
+                         <ul id="lead4-desc" class="mt-2 space-y-2 text-lg">
+                             <li><i class="fas fa-piggy-bank fa-fw mr-2" style="color: var(--color-secondary);"></i>Financial Literacy Club, Member</li>
+                             <li><i class="fas fa-chart-line fa-fw mr-2" style="color: var(--color-secondary);"></i>University Finance Association, Investment Analyst</li>
+                             <li><i class="fas fa-cogs fa-fw mr-2" style="color: var(--color-secondary);"></i>Management Information Systems Association, Member</li>
+                             <li><i class="fas fa-truck fa-fw mr-2" style="color: var(--color-secondary);"></i>Supply Chain Management Student Organization, Member</li>
+                             <li><i class="fas fa-atom fa-fw mr-2" style="color: var(--color-secondary);"></i>American Nuclear Society, Member</li>
+                         </ul>
+                     </div>
+                 </div>
+            </section>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+             <section id="music" aria-labelledby="music-title">
+                 <h2 id="music-title" class="section-title"><i class="fas fa-music"></i> Music & Community</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                     <div class="card music-item" data-tags="music orchestra performance double-bass" aria-describedby="music1-desc">
+                        <h3><i class="fas fa-users-cog"></i> University Symphony Orchestra</h3>
+                        <h4>Double Bassist</h4>
+                        <p class="date-location">Ongoing | Austin, TX</p>
+                        <ul id="music1-desc">
+                            <li>Perform in concerts and community engagements.</li>
+                            <li>Collaborate with diverse musicians, honing skills in ensemble performance, discipline, and interpretation.</li>
+                        </ul>
+                        <figure class="mt-4">
+                            <video src="https://placehold.co/600x400.mp4" controls loading="lazy" class="w-full rounded" aria-label="Sample orchestral performance video placeholder">
+                                Your browser does not support the video tag.
+                            </video>
+                            <figcaption class="text-sm text-center mt-2" style="color: var(--color-text-muted);">Placeholder: Sample Performance</figcaption>
+                        </figure>
+                    </div>
+                     <div class="card music-item" data-tags="music teaching mentorship volunteer" aria-describedby="music2-desc">
+                         <h3><i class="fas fa-chalkboard-teacher"></i> UT String Project</h3>
+                         <h4>Volunteer Instructor</h4>
+                         <p class="date-location">Ongoing | Austin, TX</p>
+                         <ul id="music2-desc">
+                             <li>Coach young musicians in technique and repertoire.</li>
+                             <li>Develop communication and mentorship skills adapting to student needs.</li>
+                         </ul>
+                     </div>
+                 </div>
+            </section>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+             <section id="interests" aria-labelledby="interests-title">
+                 <h2 id="interests-title" class="section-title"><i class="fas fa-heart"></i> Interests</h2>
+                 <div class="text-center mb-6 interests-list">
+                     <span class="interest-tag" data-tag="music">Orchestral & chamber music</span>
+                     <span class="interest-tag" data-tag="mentorship">Youth mentorship in music & finance</span>
+                     <span class="interest-tag" data-tag="algorithmic-trading">Algorithmic trading challenges</span>
+                     <span class="interest-tag" data-tag="blockchain">Blockchain protocol exploration</span>
+                     <span class="interest-tag" data-tag="data-visualization">Data visualization & analytics</span>
+                     <span class="interest-tag" data-tag="startup">Startup community engagement</span>
+                 </div>
+                 <p class="text-lg mt-4 text-center max-w-3xl mx-auto" style="color: var(--color-text-muted);">
+                     Passionate about mentoring young musicians and improving financial literacy. Actively seeking connections between artistic discipline and analytical problem-solving.
+                 </p>
+            </section>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <section id="contact" aria-labelledby="contact-title">
+                <h2 id="contact-title" class="section-title">Get In Touch</h2>
+                <p> Interested in collaborating or have a question? Feel free to reach out via the links below or use the contact form. </p>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10 mt-8 mb-12">
+                    <a href="mailto:sulayman.bowles@utexas.edu" aria-label="Email Sulayman Bowles">
+                        <i class="fas fa-envelope"></i> sulayman.bowles@utexas.edu
+                    </a>
+                    <a href="tel:512-827-9016" aria-label="Call Sulayman Bowles">
+                        <i class="fas fa-phone"></i> 512-827-9016
+                    </a>
+                    <a href="https://linkedin.com/in/sulayman-bowles" target="_blank" rel="noopener noreferrer" aria-label="Visit Sulayman Bowles' LinkedIn profile">
+                        <i class="fab fa-linkedin"></i> LinkedIn Profile
+                    </a>
+                    <a href="https://github.com/SulaymanB2024" target="_blank" rel="noopener noreferrer" aria-label="Visit Sulayman Bowles' GitHub profile">
+                        <i class="fab fa-github"></i> GitHub Profile
+                    </a>
+                </div>
+
+                <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+
+        </main> <footer>
+             <div class="container mx-auto px-6">
+                 <p>&copy; <span id="current-year"></span> Sulayman Bowles. All rights reserved.</p>
+                 <p class="text-xs mt-2">Built with HTML, Tailwind CSS, GSAP</p>
+             </div>
+        </footer>
+
+    </div> <div class="column-bg"></div>
+
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-project-title" aria-hidden="true">
+        <div class="modal-container">
+            <button id="modal-close-btn" class="modal-close-btn" aria-label="Close project details">&times;</button>
+            <div class="modal-content">
+                <h3 id="modal-project-title">[Project Title]</h3>
+                <h4 id="modal-project-subtitle">[Subtitle/Role]</h4>
+                <p id="modal-project-date" class="date-location">[Date | Location]</p>
+                <div id="modal-project-links" class="project-links mb-6 text-center"></div>
+
+                <h5>Problem / Objective</h5>
+                <p id="modal-project-objective">[Placeholder]</p>
+                <h5>My Analytical / Technical Approach</h5>
+                <p id="modal-project-approach">[Placeholder]</p>
+                <h5>Technologies / Methods Used</h5>
+                <p id="modal-project-tech">[Placeholder]</p>
+                <h5>Results / Impact</h5>
+                <p id="modal-project-results">[Placeholder]</p>
+
+                <h5>Visuals / Demo</h5>
+                <div id="modal-project-visuals">
+                    <div class="project-visuals-carousel">
+                        </div>
+                    </div>
+
+                <div id="modal-code-snippet-container" class="hidden">
+                    <h5>Code Snippet Example</h5>
+                    <pre><code id="modal-project-code" class="language-python">[Placeholder]</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2ywQ0ckNV0cGZWxwJMANAulinKcVilnHNUREUhS/fAu36HaA9nQZ+PSb/KGNSMuZUZUyrA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-SkmBfuA2hqjzEVpmnMt/LINrjTBVZPgHHWHCzZrKHrmUmAOcKsyKR/XxXdowW8OcZVAvjkNvSySU8+j6b/3x/g==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+    <script>
+        // --- Wait for DOMContentLoaded ---
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Utility Functions ---
+            const getYear = () => {
+                const yearElement = document.getElementById('current-year');
+                if (yearElement) yearElement.textContent = new Date().getFullYear();
+            };
+
+            // --- Global State & Elements ---
+            const body = document.body;
+            const mainNavLinks = document.querySelectorAll('#main-nav a');
+            const sections = document.querySelectorAll('main section[id]');
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const backToTopBtn = document.getElementById('back-to-top-btn');
+            const modal = document.getElementById('project-modal');
+            const modalContainer = modal?.querySelector('.modal-container');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+            const viewProjectBtns = document.querySelectorAll('.view-project-btn');
+            const skillTags = document.querySelectorAll('.skill-tag, .interest-tag');
+            const filterableItems = document.querySelectorAll('.project-item, .experience-item, .leadership-item, .music-item'); // Items to filter
+            const resetFilterBtn = document.getElementById('reset-filter-btn');
+            let modalFocusTrap = null; // For focus-trap library
+
+            // --- Project Data (with Visuals) ---
+            // USER ACTION NEEDED: Update project details, visuals, links, and code snippets.
+            const projectData = {
+                imc: {
+                    title: "IMC Prosperity Global Trading Challenge", subtitle: "Participant", date: "Spring 2025 | Virtual",
+                    objective: "Achieve maximum risk-adjusted returns in a simulated multi-asset trading environment using algorithmic and discretionary strategies within IMC's proprietary platform.",
+                    approach: "Developed and backtested volatility-based entry/exit signals for equities using Python analysis on historical data. Applied momentum indicators (e.g., MACD, RSI) for commodity futures trading. Incorporated simulated news flow and market sentiment analysis for discretionary adjustments to algorithmic positions. Focused on strict risk management rules, including position sizing based on volatility and correlation analysis.",
+                    tech: "IMC Simulation Platform API, Python (Pandas, NumPy), Algorithmic Strategy Design, Risk Management (VaR, Sharpe Ratio), Market Simulators.",
+                    results: "Ranked in the top 15% globally during the final round focusing on options strategies. Successfully implemented a pairs trading strategy between correlated assets. Key learning involved the critical importance of adapting strategies quickly to changing market dynamics simulated within the challenge.",
+                    visuals: [ // Array of visual objects
+                        { type: 'image', src: 'https://placehold.co/600x400/cccccc/800000?text=IMC+P%26L+Chart', alt: 'Placeholder P&L chart for IMC Challenge', caption: 'Simulated P&L Performance' },
+                        { type: 'image', src: 'https://placehold.co/600x400/cccccc/800000?text=IMC+Strategy+Diagram', alt: 'Placeholder diagram of trading strategy', caption: 'Volatility Strategy Logic' }
+                    ],
+                    links: []
+                },
+                messari: {
+                    title: "Messari Stablecoin Research (Texas Blockchain)", subtitle: "Analyst Contributor", date: "Spring 2025 | Austin, TX",
+                    objective: "Analyze the economic design, stability mechanisms (peg resilience), collateralization models, and potential systemic risks of leading algorithmic and crypto-collateralized stablecoins (e.g., DAI, FRAX, crvUSD).",
+                    approach: "Conducted in-depth literature review of stablecoin whitepapers and academic research. Collected on-chain data (e.g., collateral ratios, mint/burn activity, peg deviation) and market data (e.g., trading volume, liquidity) using the Messari API and Dune Analytics queries. Developed Python scripts to automate data fetching, cleaning, and visualization for tracking key stability metrics over time. Assessed arbitrage loop effectiveness, governance structures, and regulatory risks.",
+                    tech: "Python (Pandas, Matplotlib, Seaborn, Requests), Messari API, Dune Analytics (SQL queries), Data Visualization (Tableau/Python), Mechanism Design Analysis, Risk Assessment Frameworks.",
+                    results: "Identified specific stress scenarios and parameter thresholds leading to potential de-pegging events for certain algorithmic stablecoins based on historical data analysis. Automated daily monitoring reports for key stablecoin metrics, reducing manual data collection effort by approximately 75%. Contributed findings to a Texas Blockchain research report shared with the investment team, informing asset allocation decisions.",
+                    visuals: [
+                        { type: 'image', src: 'https://placehold.co/600x400/cccccc/800000?text=Stablecoin+Peg+Deviation', alt: 'Placeholder chart showing stablecoin peg deviation', caption: 'DAI Peg Deviation Analysis (2023)' },
+                        { type: 'image', src: 'https://placehold.co/600x400/cccccc/800000?text=Collateral+Ratio+Chart', alt: 'Placeholder chart showing collateral ratios', caption: 'Collateral Ratio Monitoring' }
+                    ],
+                    codeSnippet: { language: 'python', code: `# Example: Fetching asset metrics via Messari API & basic plot\nimport requests\n# ... (rest of the code snippet from previous version) ...\n` },
+                    links: [ { text: "Texas Blockchain", url: "https://www.texasblockchain.org/", icon: "fas fa-university" } ]
+                },
+                point72: {
+                    title: "Point72 Case Study (Jireh Capital Management)", subtitle: "Investment Thesis Team Member", date: "Fall 2024 | UT Austin",
+                    objective: "Develop and present a comprehensive investment thesis (short position) for Chipotle Mexican Grill (CMG) to Jireh Capital Management mentors, simulating the Point72 stock pitch process.",
+                    approach: "Conducted thorough industry analysis of the fast-casual dining sector using Porter's Five Forces and market trend research. Performed deep fundamental analysis of CMG's financials (10-Ks, 10-Qs, investor presentations). Built detailed financial models in Excel, including a Discounted Cash Flow (DCF) model and comparable company analysis (Comps). Assessed CMG's management strategy, competitive positioning against rivals (e.g., Sweetgreen, Cava), and potential risks (e.g., labor costs, food safety perception, slowing same-store sales growth). Synthesized findings into a concise and persuasive stock pitch deck.",
+                    tech: "Excel (Advanced Financial Modeling, Sensitivity Analysis), Bloomberg Terminal, S&P Capital IQ, PowerPoint, Public Filings Analysis (SEC EDGAR), Valuation Methodologies (DCF, Comps).",
+                    results: "Successfully presented a data-driven short thesis arguing for CMG's overvaluation based on slowing growth projections, increasing competition, and margin pressures. Received constructive feedback from Jireh Capital mentors on model assumptions, risk factor weighting, and presentation clarity. The exercise provided valuable experience in rigorous investment analysis and communication.",
+                    visuals: [
+                        { type: 'image', src: 'https://placehold.co/600x400/cccccc/800000?text=CMG+Valuation+Summary', alt: 'Placeholder slide showing valuation summary', caption: 'Valuation Summary (DCF & Comps)' },
+                        { type: 'image', src: 'https://placehold.co/600x400/cccccc/800000?text=Competitive+Landscape', alt: 'Placeholder slide showing competitive landscape', caption: 'Fast-Casual Competitive Analysis' }
+                    ],
+                    links: [ { text: "Jireh Capital (UT)", url: "https://www.jirehcapital.org/", icon: "fas fa-university" } ]
+                }
+            };
+
+            // --- Tag Filtering Data ---
+            // Maps tags (lowercase, hyphenated) to item classes/IDs they relate to.
+            // This is a simplified example; a more robust system might use project IDs.
+            const tagContentMapping = {
+                'python': ['imc', 'messari'],
+                'financial-modeling': ['imc', 'point72', 'exp1', 'exp3', 'exp4'],
+                'blockchain': ['messari', 'exp2', 'exp3'],
+                'data-analysis': ['messari', 'exp1'],
+                'excel': ['point72', 'exp1'],
+                'trading-challenge': ['imc'],
+                'algorithmic-trading': ['imc'],
+                'risk-management': ['imc'],
+                'stablecoin': ['messari'],
+                'research': ['messari'],
+                'crypto': ['messari', 'exp3', 'exp5'],
+                'case-study': ['point72'],
+                'investment-thesis': ['point72'],
+                'valuation-analysis': ['point72', 'exp3'],
+                'real-estate': ['exp1'],
+                'bittensor': ['exp2'],
+                'startup': ['exp2', 'exp6'],
+                'governance': ['exp2'],
+                'defi': ['exp3'],
+                'due-diligence': ['exp3'],
+                'energy-trading': ['exp4'],
+                'market-analysis': ['exp4', 'exp5'],
+                'marketing': ['exp5'],
+                'community-management': ['exp5'],
+                'consulting': ['exp6'],
+                'strategy': ['exp6'],
+                'project-management': ['exp6'],
+                'student-government': ['lead1'],
+                'leadership': ['lead1', 'lead2', 'lead3'],
+                'policy': ['lead1'],
+                'advocacy': ['lead1'],
+                'mentorship': ['lead2', 'music2'],
+                'service': ['lead2'],
+                'arts-administration': ['lead3'],
+                'event-management': ['lead3'],
+                'finance': ['lead4'], // Broad tag for memberships
+                'mis': ['lead4'],
+                'supply-chain': ['lead4'],
+                'nuclear': ['lead4'],
+                'music': ['music1', 'music2'], // Broad tag
+                'orchestra': ['music1'],
+                'performance': ['music1'],
+                'double-bass': ['music1'],
+                'teaching': ['music2'],
+                'volunteer': ['music2'],
+                'data-visualization': [], // Add relevant items if any
+                'sql': [],
+                'git': [],
+                'tableau': [],
+                'office-suite': [],
+                'powerpoint': ['point72'],
+                'word': [],
+                'google-workspace': [],
+                'canva': [],
+                'spanish': []
+                // Add mappings for all tags used
+            };
+
+
+            // --- GSAP Animations Setup ---
+            const setupGsapAnimations = () => {
+                // Fallback/Warning for GSAP loading
+                if (typeof gsap === 'undefined') {
+                    console.warn('GSAP library not loaded. Animations disabled.');
+                    // Optional: Add fallback styles or logic here
+                    return;
+                }
+                if (typeof ScrollTrigger === 'undefined') {
+                    console.warn('ScrollTrigger plugin not loaded. Scroll animations disabled.');
+                    // Optional: Add fallback styles or logic here
+                    // return; // Might still want basic GSAP animations
+                } else {
+                    gsap.registerPlugin(ScrollTrigger);
+                }
+
+                // --- Hero Entrance Animation ---
+                const setupHeroAnimations = () => { /* ... (Keep existing hero animation logic) ... */
+                    const photo = document.getElementById('hero-photo');
+                    const headline = document.getElementById('hero-headline');
+                    const intro = document.getElementById('hero-intro');
+                    const quote = document.getElementById('hero-quote');
+                    const buttons = document.getElementById('hero-buttons');
+                    if (!photo || !headline || !intro || !quote || !buttons) return;
+                    gsap.set([photo, headline, intro, quote, buttons], { autoAlpha: 0, y: 30 });
+                    const tl = gsap.timeline({ defaults: { ease: "power2.out", duration: 0.8 } });
+                    tl.to(photo, { autoAlpha: 1, y: 0, scale: 1, duration: 1 })
+                      .to(headline, { autoAlpha: 1, y: 0 }, "-=0.7")
+                      .to(intro, { autoAlpha: 1, y: 0 }, "-=0.7")
+                      .to(quote, { autoAlpha: 1, y: 0 }, "-=0.7")
+                      .to(buttons, { autoAlpha: 1, y: 0 }, "-=0.7");
+                    // Don't auto-play if Typed.js is also animating headline
+                    // tl.play();
+                };
+
+                // --- Hero Parallax Background ---
+                const setupHeroParallax = () => { /* ... (Keep existing parallax logic) ... */
+                    const parallaxBg = document.getElementById('hero-parallax-bg'); if (!parallaxBg) return;
+                    gsap.to(parallaxBg, { backgroundPosition: "50% 100%", ease: "none", scrollTrigger: { trigger: "#about", start: "top bottom", end: "bottom top", scrub: true } });
+                };
+
+                // --- Staggered Card/Item Animations ---
+                const setupStaggerAnimations = () => { /* ... (Keep existing stagger logic) ... */
+                    gsap.utils.toArray('#experience .card, #projects .project-item, #leadership .card, #music .card').forEach((card, index) => {
+                        gsap.from(card, { autoAlpha: 0, y: 50, duration: 0.6, delay: (index % (window.innerWidth > 1024 ? 3 : (window.innerWidth > 768 ? 2 : 1))) * 0.1, scrollTrigger: { trigger: card, start: "top 85%", toggleActions: "play none none none", once: true } });
+                    });
+                    gsap.utils.toArray('.skills-list .skill-tag, .interests-list .interest-tag, .certifications-list li').forEach((item, index) => {
+                        gsap.from(item, { autoAlpha: 0, x: -30, duration: 0.4, delay: index * 0.05, scrollTrigger: { trigger: item.closest('div, ul'), start: "top 90%", toggleActions: "play none none none", once: true } });
+                    });
+                     // Contact Form Input Animation
+                    gsap.utils.toArray('#contact-form .form-group').forEach((group, index) => {
+                        gsap.from(group, { autoAlpha: 0, y: 30, duration: 0.5, delay: index * 0.1, scrollTrigger: { trigger: group, start: "top 90%", toggleActions: "play none none none", once: true } });
+                    });
+                };
+
+                // --- Section Divider Animation ---
+                const setupDividerAnimations = () => {
+                     if (typeof ScrollTrigger === 'undefined') return; // Need ScrollTrigger
+                     gsap.utils.toArray('.section-divider').forEach(divider => {
+                         gsap.from(divider, {
+                             scaleX: 0.5, // Start smaller horizontally
+                             opacity: 0,
+                             duration: 0.8,
+                             ease: "power2.out",
+                             scrollTrigger: {
+                                 trigger: divider,
+                                 start: "top 95%", // Trigger slightly earlier
+                                 toggleActions: "play none none none",
+                                 once: true
+                             }
+                         });
+                     });
+                };
+
+                // Call setup functions
+                setupHeroAnimations(); // Call even if Typed.js is active
+                setupHeroParallax();
+                setupStaggerAnimations();
+                setupDividerAnimations(); // NEW
+            };
+
+            // --- Typed.js Setup ---
+            const setupTypedJs = () => {
+                // Fallback/Warning for Typed.js loading
+                if (typeof Typed === 'undefined') {
+                    console.warn('Typed.js library not loaded. Typing animation disabled.');
+                    // Optional: Manually set the text if Typed.js fails
+                    const typedElement = document.getElementById('typed-text');
+                    if(typedElement) typedElement.textContent = 'Innovator'; // Default text
+                    return;
+                }
+
+                const typedElement = document.getElementById('typed-text');
+                if (typedElement) {
+                    new Typed('#typed-text', {
+                        strings: ['Musician', 'Analyst', 'Innovator', 'Developer'], // Added Developer
+                        typeSpeed: 60, // Slightly faster
+                        backSpeed: 40,
+                        backDelay: 2000, // Longer pause before backspacing
+                        startDelay: 500, // Delay before starting
+                        loop: true,
+                        fadeOut: false, // Keep text visible while typing next string
+                        smartBackspace: true, // Only backspace what doesn't match
+                        cursorChar: '_', // Roman-style cursor?
+                    });
+                }
+            };
+
+            // --- Dark Mode ---
+            const setupDarkMode = () => {
+                if (!darkModeToggle) return;
+
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+                let currentMode = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
+
+                const applyDarkMode = (isDark) => {
+                    if (isDark) {
+                        body.classList.add('dark-mode');
+                        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon
+                        darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
+                    } else {
+                        body.classList.remove('dark-mode');
+                        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Moon icon
+                        darkModeToggle.setAttribute('aria-label', 'Switch to dark mode');
+                    }
+                };
+
+                applyDarkMode(currentMode === 'dark'); // Apply initial mode
+
+                darkModeToggle.addEventListener('click', () => {
+                    currentMode = body.classList.contains('dark-mode') ? 'light' : 'dark';
+                    localStorage.setItem('theme', currentMode);
+                    applyDarkMode(currentMode === 'dark');
+                });
+
+                // Listen for system preference changes
+                prefersDark.addEventListener('change', (e) => {
+                    // Only change if user hasn't manually set a theme
+                    if (!localStorage.getItem('theme')) {
+                        currentMode = e.matches ? 'dark' : 'light';
+                        applyDarkMode(currentMode === 'dark');
+                    }
+                });
+            };
+
+            // --- Sticky Navigation & Active Link Highlighting ---
+            const setupStickyNav = () => {
+                if (!mainNavLinks.length || !sections.length || typeof IntersectionObserver === 'undefined') {
+                    console.warn('IntersectionObserver or nav elements not found. Active link highlighting disabled.');
+                    return;
+                }
+
+                const observerOptions = {
+                    root: null, // viewport
+                    rootMargin: '-40% 0px -60% 0px', // Trigger zone in the middle 40% of the viewport
+                    threshold: 0 // Trigger as soon as any part enters/leaves the zone
+                };
+
+                const observerCallback = (entries) => {
+                    entries.forEach(entry => {
+                        const id = entry.target.getAttribute('id');
+                        const navLink = document.querySelector(`#main-nav a[href="#${id}"]`);
+
+                        if (entry.isIntersecting && entry.intersectionRatio > 0) {
+                            // Remove active class from all links
+                            mainNavLinks.forEach(link => {
+                                link.classList.remove('active-nav-link');
+                                link.removeAttribute('aria-current');
+                            });
+                            // Add active class to the current one
+                            if (navLink) {
+                                navLink.classList.add('active-nav-link');
+                                navLink.setAttribute('aria-current', 'page');
+                            }
+                        } else {
+                            // Optional: Remove class only if it was the one leaving the threshold
+                            // This prevents flickering when multiple sections are partially visible
+                            if (navLink && navLink.classList.contains('active-nav-link')) {
+                                // Check if another section is now active before removing
+                                const anyActive = Array.from(mainNavLinks).some(link => link.classList.contains('active-nav-link'));
+                                if (!anyActive) { // Only remove if no other link became active
+                                   // navLink.classList.remove('active-nav-link');
+                                   // navLink.removeAttribute('aria-current');
+                                   // Let the next intersecting entry handle adding the class
+                                }
+                            }
+                        }
+                    });
+                };
+
+                const observer = new IntersectionObserver(observerCallback, observerOptions);
+                sections.forEach(section => observer.observe(section));
+            };
+
+            // --- Back to Top Button ---
+            const setupBackToTop = () => {
+                if (!backToTopBtn) return;
+
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) { // Show after scrolling 300px
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            };
+
+            // --- Tag Filtering ---
+            const setupTagFiltering = () => {
+                if (!skillTags.length || !filterableItems.length || !resetFilterBtn) return;
+
+                let activeTag = null;
+
+                const filterItems = (tag) => {
+                    activeTag = tag;
+                    resetFilterBtn.style.display = 'inline-block'; // Show reset button
+
+                    // Update active state on tags
+                    skillTags.forEach(t => {
+                        t.classList.toggle('active-tag', t.dataset.tag === tag);
+                    });
+
+                    const relevantItemClasses = tagContentMapping[tag] || [];
+
+                    filterableItems.forEach(item => {
+                        const itemTags = item.dataset.tags ? item.dataset.tags.split(' ') : [];
+                        // Check if item has the tag OR if its ID/Class is in the mapping
+                        const isRelevantById = relevantItemClasses.some(cls => item.classList.contains(cls) || item.id === cls);
+                        const hasTagDirectly = itemTags.includes(tag);
+
+                        if (tag === null || hasTagDirectly || isRelevantById) {
+                            item.classList.remove('filtered-out');
+                        } else {
+                            item.classList.add('filtered-out');
+                        }
+                    });
+                };
+
+                const resetFilters = () => {
+                    activeTag = null;
+                    resetFilterBtn.style.display = 'none'; // Hide reset button
+                    skillTags.forEach(t => t.classList.remove('active-tag'));
+                    filterableItems.forEach(item => item.classList.remove('filtered-out'));
+                };
+
+                skillTags.forEach(tagElement => {
+                    tagElement.addEventListener('click', () => {
+                        const tag = tagElement.dataset.tag;
+                        if (tag) {
+                            if (tag === activeTag) {
+                                resetFilters(); // Clicking active tag resets
+                            } else {
+                                filterItems(tag);
+                            }
+                        }
+                    });
+                    // Add keyboard accessibility
+                    tagElement.setAttribute('role', 'button');
+                    tagElement.setAttribute('tabindex', '0');
+                    tagElement.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault(); // Prevent spacebar scroll
+                            tagElement.click();
+                        }
+                    });
+                });
+
+                resetFilterBtn.addEventListener('click', resetFilters);
+            };
+
+
+            // --- Modal Functionality (with Focus Trap & Carousel) ---
+            const setupModal = () => {
+                if (!modal || !modalContainer || !modalCloseBtn || !viewProjectBtns.length) {
+                    console.warn("Modal elements not found. Modal functionality disabled.");
+                    return;
+                }
+
+                // Initialize focus trap library
+                if (typeof focusTrap !== 'undefined') {
+                     // Ensure modal is queryable even if hidden initially
+                     modal.removeAttribute('aria-hidden'); // Temporarily remove if needed for trap init
+                     try {
+                         modalFocusTrap = focusTrap.createFocusTrap(modal, {
+                             initialFocus: modalCloseBtn, // Focus close button first
+                             fallbackFocus: modalContainer, // Fallback if close button isn't focusable
+                             allowOutsideClick: true, // Allow clicks on overlay to close
+                             escapeDeactivates: true, // Allow Esc key to close
+                             onActivate: () => modalContainer.focus(), // Focus container after activation
+                             onDeactivate: () => previouslyFocusedElement?.focus() // Restore focus on close
+                         });
+                         modal.setAttribute('aria-hidden', 'true'); // Re-hide for accessibility
+                     } catch (e) {
+                         console.error("Failed to initialize focus-trap:", e);
+                         modalFocusTrap = null; // Disable trap if init fails
+                     }
+                } else {
+                    console.warn('focus-trap library not loaded. Modal focus management might be limited.');
+                }
+
+
+                let previouslyFocusedElement = null;
+                let storedScrollY = 0;
+
+                const openModal = (projectId, triggerElement) => {
+                    const data = projectData[projectId];
+                    if (!data) { console.error(`Project data not found for ID: ${projectId}`); return; }
+
+                    previouslyFocusedElement = triggerElement || document.activeElement;
+                    storedScrollY = window.scrollY;
+
+                    // --- Populate Modal Content ---
+                    modalContainer.querySelector('#modal-project-title').textContent = data.title || "[Project Title]";
+                    modalContainer.querySelector('#modal-project-subtitle').textContent = data.subtitle || "";
+                    modalContainer.querySelector('#modal-project-date').textContent = data.date || "";
+                    modalContainer.querySelector('#modal-project-objective').textContent = data.objective || "[Details forthcoming]";
+                    modalContainer.querySelector('#modal-project-approach').textContent = data.approach || "[Details forthcoming]";
+                    modalContainer.querySelector('#modal-project-tech').textContent = data.tech || "[Details forthcoming]";
+                    modalContainer.querySelector('#modal-project-results').textContent = data.results || "[Details forthcoming]";
+
+                    // --- Populate Visuals Carousel ---
+                    const visualsContainer = modalContainer.querySelector('#modal-project-visuals .project-visuals-carousel');
+                    if (visualsContainer) {
+                        visualsContainer.innerHTML = ''; // Clear previous visuals
+                        if (data.visuals && data.visuals.length > 0) {
+                            data.visuals.forEach(visual => {
+                                const figure = document.createElement('figure');
+                                let mediaElement;
+                                if (visual.type === 'image') {
+                                    mediaElement = document.createElement('img');
+                                    mediaElement.src = visual.src;
+                                    mediaElement.alt = visual.alt || 'Project visual';
+                                    mediaElement.loading = 'lazy'; // Lazy load modal images too
+                                } else if (visual.type === 'video') {
+                                    mediaElement = document.createElement('video');
+                                    mediaElement.src = visual.src;
+                                    mediaElement.controls = true;
+                                    mediaElement.setAttribute('aria-label', visual.alt || 'Project video');
+                                    mediaElement.loading = 'lazy';
+                                }
+                                if (mediaElement) figure.appendChild(mediaElement);
+
+                                const figcaption = document.createElement('figcaption');
+                                figcaption.textContent = visual.caption || '';
+                                figure.appendChild(figcaption);
+                                visualsContainer.appendChild(figure);
+                            });
+                        } else {
+                            visualsContainer.innerHTML = '<p class="text-center italic p-4">No visuals available for this project.</p>';
+                        }
+                    }
+
+                    // --- Populate Code Snippet ---
+                    const codeContainer = modalContainer.querySelector('#modal-code-snippet-container');
+                    const codeBlock = modalContainer.querySelector('#modal-project-code');
+                    if (data.codeSnippet && codeBlock && codeContainer && typeof Prism !== 'undefined') {
+                        codeBlock.textContent = data.codeSnippet.code;
+                        codeBlock.className = `language-${data.codeSnippet.language || 'markup'}`;
+                        codeContainer.classList.remove('hidden');
+                        requestAnimationFrame(() => { Prism.highlightElement(codeBlock); });
+                    } else if (codeContainer) {
+                        codeContainer.classList.add('hidden');
+                    }
+
+                    // --- Populate Links ---
+                    const linksDiv = modalContainer.querySelector('#modal-project-links');
+                    if (linksDiv) {
+                        linksDiv.innerHTML = '';
+                        if (data.links && data.links.length > 0) {
+                            data.links.forEach(link => {
+                                const a = document.createElement('a');
+                                a.href = link.url || '#'; a.target = "_blank"; a.rel = "noopener noreferrer";
+                                a.innerHTML = `<i class="${link.icon || 'fas fa-link'}"></i> ${link.text || 'Link'}`;
+                                linksDiv.appendChild(a);
+                            });
+                        }
+                    }
+
+                    // --- Show Modal & Manage State ---
+                    modal.classList.add('active');
+                    modal.setAttribute('aria-hidden', 'false');
+                    body.classList.add('modal-open');
+                    modalContainer.scrollTop = 0;
+
+                    // Activate focus trap
+                    if (modalFocusTrap) {
+                        // Need a slight delay for modal animations to potentially finish
+                        setTimeout(() => modalFocusTrap.activate(), 50);
+                    } else {
+                        modalCloseBtn.focus(); // Basic focus fallback
+                    }
+                };
+
+                const closeModal = () => {
+                    // Deactivate focus trap first
+                    if (modalFocusTrap) {
+                        modalFocusTrap.deactivate();
+                    }
+
+                    modal.classList.remove('active');
+                    modal.setAttribute('aria-hidden', 'true');
+                    body.classList.remove('modal-open');
+
+                    // Focus is handled by focus-trap's onDeactivate, but add fallback
+                    if (!modalFocusTrap && previouslyFocusedElement) {
+                         previouslyFocusedElement.focus();
+                    }
+                    window.scrollTo(0, storedScrollY);
+                    previouslyFocusedElement = null;
+                    storedScrollY = 0;
+                };
+
+                // --- Event Listeners ---
+                viewProjectBtns.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        if (button.dataset.projectId) {
+                            openModal(button.dataset.projectId, button);
+                        } else {
+                            console.error("Button missing 'data-project-id':", button);
+                        }
+                    });
+                });
+                modalCloseBtn.addEventListener('click', closeModal);
+                // Close on overlay click (handled by focus-trap if active, otherwise manual)
+                modal.addEventListener('click', (event) => {
+                    if (!modalFocusTrap && event.target === modal) {
+                        closeModal();
+                    }
+                });
+                // Close on Escape key (handled by focus-trap if active, otherwise manual)
+                document.addEventListener('keydown', (event) => {
+                     if (!modalFocusTrap && event.key === 'Escape' && modal.classList.contains('active')) {
+                         closeModal();
+                     }
+                 });
+            };
+
+            // --- Initialization ---
+            getYear();
+            setupDarkMode(); // Setup dark mode first to apply theme before animations
+            setupGsapAnimations(); // Then setup animations
+            setupTypedJs();
+            setupStickyNav();
+            setupBackToTop();
+            setupTagFiltering();
+            setupModal();
+
+            console.log("Portfolio Initialized (V2)");
+            // Add warnings for missing libraries if needed
+            if (typeof gsap === 'undefined') console.warn("GSAP missing.");
+            if (typeof Typed === 'undefined') console.warn("Typed.js missing.");
+            if (typeof Prism === 'undefined') console.warn("Prism.js missing.");
+            if (typeof focusTrap === 'undefined') console.warn("focus-trap missing.");
+
+        }); // End DOMContentLoaded
+    </script>
+
+</body>
+</html>
